@@ -1,0 +1,13 @@
+{
+  "name": "heroku-docker",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Vítězslav Ackermann Ferko <qwerty@qry.me>",
+  "main": "srcserver/server.js",
+  "scripts": {
+    "start": "node srcserver/server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
