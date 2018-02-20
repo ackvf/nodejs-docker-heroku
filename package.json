@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "Vítězslav Ackermann Ferko <qwerty@qry.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ackvf/nodejs-docker-heroku"
+  },
   "main": "srcserver/server.js",
   "scripts": {
     "start": "nodemon srcserver/index.js --exec babel-node",
     "build": "babel srcserver -d build",
-    "serve": "node build/index.js"
+    "serve": "node build/index.js",
+    "publish": "heroku container:push web"
   },
   "dependencies": {
     "express": "^4.16.1"
