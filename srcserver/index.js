@@ -13,7 +13,7 @@ const HOST = '0.0.0.0'
 const app = express()
 app.get('/', (req, res) => {
   res.send(`
-    Hello Babel!\n
+    Hello Babel 7!\n
     <br><br>\n
     <h3>Follows process.env</h3>\n
       <pre>${printEnv()}</pre>
