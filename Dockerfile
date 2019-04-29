@@ -8,15 +8,19 @@ MAINTAINER Vítězslav Ackermann Ferko <qwerty@qry.me>
 
 COPY package*.json ./
 
-
 # To skip devDependencies either use --only=production or NODE_ENV=production
 
-RUN npm install --only=production
+RUN npm install
 
 
 # Bundle app source
 
 COPY . .
+
+# Build app source
+
+RUN npm run build
+
 
 # change from root user
 
@@ -25,5 +29,6 @@ USER nobody
 # Expose is ignored by heroku
 
 EXPOSE 8080
+
 
 CMD [ "npm", "run", "serve" ]

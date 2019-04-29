@@ -2,6 +2,9 @@
 
 import express from 'express'
 
+// internal imports
+import { printEnv } from './utils'
+
 // Constants
 const PORT = process.env.PORT || 8080
 const HOST = '0.0.0.0'
@@ -19,16 +22,3 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, HOST)
 console.log(`Running on http://${HOST}:${PORT}`)
-
-
-function printEnv() {
-  return JSON.stringify(process.env, (k, v) => {
-
-    if (k === '') return v
-
-    if (!!k.match('(HEROKU_|npm_package_(?!(dev|dep|scripts)))')) return v
-
-    return undefined
-
-  }, ' ')
-}
